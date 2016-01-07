@@ -25,7 +25,7 @@ and open the template in the editor.
 <?php
         // put your code here
        $position = $_GET['board'];
-       $squares = str_split($postion);
+       $square = str_split($postion);
        
        //WINNING PATTERNS FUNCTION
        function winner ($tocken, $position){
