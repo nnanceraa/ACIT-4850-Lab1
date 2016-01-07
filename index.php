@@ -28,7 +28,7 @@ and open the template in the editor.
        $squares = str_split($postion);
        
        //WINNING PATTERNS FUNCTION
-       function winner ($tocken, $postion){
+       function winner ($tocken, $position){
        $won = false;
        if (($position[0] == $tocken) && ($position[1]== $tocken) && ($position[2] == $tocken)){
            $won = true;
