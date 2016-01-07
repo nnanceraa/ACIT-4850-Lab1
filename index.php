@@ -11,11 +11,43 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
-        $name = 'Nancy';
-        $what = 'geek';
-        $level = 10;
-        echo 'Hi, my name is '.$name.'. And I am a level '.$level.' '.$what;
+        
+        if (winner('x', $square)) {
+            echo 'You win.';
+        } else if (winner('o', $square)) {
+            echo 'I win.';
+        } else {
+            echo 'No winner yet';
+        }
         ?>
     </body>
 </html>
+<?php
+        // put your code here
+       $position = $_GET['board'];
+       $squares = str_split($postion);
+       
+       //WINNING PATTERNS FUNCTION
+       function winner ($tocken, $postion){
+       $won = false;
+       if (($position[0] == $tocken) && ($position[1]== $tocken) && ($position[2] == $tocken)){
+           $won = true;
+       } else if (($position[3] == $tocken) && ($position[4]== $tocken) && ($position[5] == $tocken)){
+            $won = true;
+       } else if (($position[6] == $tocken) && ($position[7]== $tocken) && ($position[8] == $tocken)){
+            $won = true;
+       } else if (($position[0] == $tocken) && ($position[4]== $tocken) && ($position[8] == $tocken)){
+            $won = true;
+       } else if (($position[2] == $tocken) && ($position[4]== $tocken) && ($position[6] == $tocken)){
+            $won = true;
+       } else if (($position[1] == $tocken) && ($position[4]== $tocken) && ($position[7] == $tocken)){
+            $won = true;
+       } else if (($position[0] == $tocken) && ($position[3]== $tocken) && ($position[6] == $tocken)){
+            $won = true;
+       } else if (($position[2] == $tocken) && ($position[5]== $tocken) && ($position[8] == $tocken)){
+            $won = true;
+       }
+       }
+       
+       
+        ?>
